@@ -1,0 +1,17 @@
+.home{
+    color: white;
+}
+
+.home__products{
+    display: flex;
+}
+
+.home__cart{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(107, 107, 107);
+}
+
+.home__cart-products{
+    display: flex;
+}
