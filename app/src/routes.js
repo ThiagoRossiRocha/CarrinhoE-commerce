@@ -21,6 +21,7 @@ app.get('/banco-mysql/products', function (req, res) {
     // selecionar todos os dados da tabela usuário.
     connection.query('SELECT * FROM product', function (error, results, fields) {
       res.send(results)
+      //teste commit
     });
   });
 });
