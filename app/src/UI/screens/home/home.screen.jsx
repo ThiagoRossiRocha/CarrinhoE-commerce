@@ -12,7 +12,7 @@ export const Home = ()=>{
 
     useEffect(()=>{
         fetch(requestURL)
-            .then(resposta => resposta.json())
+            .then(resposta => resposta.json)
             .then(resposta => setProducts(resposta.products));
     }, [])
 
