@@ -2,8 +2,6 @@ import { useEffect, useState } from "react"
 import { Products } from "../../components/products/products.components"
 import "./home.style.css"
 
-//const requestURL = 'http://localhost:8080/api/products';
-
 export const Home = ()=>{
 
     const [products, setProducts] = useState([]) 
@@ -13,7 +11,8 @@ export const Home = ()=>{
     useEffect(()=>{
         fetch('http://localhost:8080/api/products')
             .then((response) => response.json() )
-            .then((response) => setProducts(response));
+            .then((response) => setProducts(response))
+            .catch((error) => alert("A aplicação apresentou um erro!!\nErro: " + error.message));
     }, [])
 
     const handleProducts = (info)=>{
@@ -43,7 +42,7 @@ export const Home = ()=>{
                     }
                 </div>
                 <h4>Total:{total}</h4>
-            </div>
+            </div>            
         </div>
     )
 }
