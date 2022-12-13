@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Products } from "../../components/products/products.components"
 import "./home.style.css"
 
-const requestURL = 'http://localhost:8080/api/products';
+//const requestURL = 'http://localhost:8080/api/products';
 
 export const Home = ()=>{
 
@@ -11,9 +11,9 @@ export const Home = ()=>{
     const [total, setTotal] = useState(0)
 
     useEffect(()=>{
-        fetch(requestURL)
-            .then(resposta => resposta.json)
-            .then(resposta => setProducts(resposta.products));
+        fetch('http://localhost:8080/api/products')
+            .then((response) => response.json() )
+            .then((response) => setProducts(response));
     }, [])
 
     const handleProducts = (info)=>{

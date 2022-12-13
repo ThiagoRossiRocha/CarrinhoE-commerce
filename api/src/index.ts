@@ -4,11 +4,10 @@ import { AppDataSource } from "./data-source"
 AppDataSource.initialize().then(async () => {
     /*
     // cadastrar os produtos para o banco de dados...
-
     const product = new Product()
-    product.image = "https://www.imagensempng.com.br/wp-content/uploads/2022/01/Coca-Cola-Lata-Png.png"
-    product.name = "Agua"
-    product.price = 4.00
+    product.image = "https://static.wixstatic.com/media/d811f7_ab9880f89d79450aa68bec5967ded9ff~mv2.png/v1/fill/w_560,h_386,al_c,lg_1,q_85,enc_auto/pastel%20de%20carne.png"
+    product.name = "Pastel"
+    product.price = 5.00
 
     await AppDataSource.manager.save(product)
     console.log("Loading products from the database...")
@@ -16,12 +15,11 @@ AppDataSource.initialize().then(async () => {
     const products = await AppDataSource.manager.find(Product)
     console.log("Loaded products: ", products)
 
-    const allPriceProducts = AppDataSource.manager.find(Product);*/
-
+    const allPriceProducts = AppDataSource.manager.find(Product);
+    */
 
     
     // Retornar os produtos do banco de dados...
-
     const productRepository = AppDataSource.getRepository(Product)
     const allProducts = await productRepository.find()
     console.log("All products from the db: ", allProducts)
