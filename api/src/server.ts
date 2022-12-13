@@ -15,10 +15,10 @@ AppDataSource.initialize().then(async () => {
         allProducts = await productRepository.find()
     }
 
-    retornaDados();
+    //retornaDados();
     
-    app.get('/api/products', (request : any, response : any) => {
-        retornaDados();
+    app.get('/api/products', async (request : any, response : any) => {
+        await retornaDados();
         response.set('Access-Control-Allow-Origin', 'http://localhost:3000');
         response.status(200).send(allProducts);
     });
